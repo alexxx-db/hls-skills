@@ -7,6 +7,8 @@ site) are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- Guide overview: a UMAP cell-type comparison screenshot logged to an MLflow
+  experiment (`docs/guide/assets/umap.png`).
 - `docs/hooks/repo_sections.py`: a guide page can copy a repository Markdown
   file, or one section of it, with `<!-- include: FILE#Heading -->`, and leave
   out sections with `omit="Heading"`. Headings are shifted to fit the page,
@@ -20,6 +22,7 @@ site) are recorded here. Format follows
   `category` and `summary` frontmatter (`docs/hooks/skill_catalog.py`).
 
 ### Changed
+- Links page: external links open in a new tab.
 - The `oss-models` skill is renamed `open-weight-models` (its guide page moves
   from `/guide/skills/oss-models/` to `/guide/skills/open-weight-models/`; the
   old URL no longer exists). The README and landing-page rows are regenerated

@@ -1,59 +1,35 @@
-# Vital Skills
+## About Vital Skills
+Vital Skills is a collection of agent skills for Health & Life Sciences workflows on Databricks. Built by HLS experts for HLS tasks, Vital Skills help you get the most out of Databricks using AI assistants.
 
-Vital Skills is a collection of agent skills for Health & Life Sciences workflows on Databricks. Each skill is a folder with a `SKILL.md` file that follows the [Agent Skills](https://agentskills.io/specification) standard. It teaches Genie Code how to run a domain workflow with the right libraries, tools, and MCP servers.
+Each skill is a folder with a `SKILL.md` file that follows the [Agent Skills](https://agentskills.io/specification) standard compatible with most coding agents. It guides AI how to run a domain workflow with the right libraries, tools, and MCP servers.
 
-<div class="grid cards" markdown>
 
--   :material-rocket-launch: **Setup**
+## Why use Vital Skills
+Perform HLS tasks faster and more reliably using AI coached by Vital Skills. Vital Skills prompts AI to recognize key decision checkpoints for clarification, use industry-standard methods and generate expected charts and artifacts. Our evaluations against [Bioomni benchmarks](https://phylo.bio/blog/evaluating-ai-agents-in-biology) show that Genie Code with skills approach the capabilities of a scientist with a few years of experience. 
 
-    ---
+More than a [sandbox](https://docs.databricks.com/aws/en/compute/serverless/sandbox), move your work into production leveraging the full-featured [Databricks Data & AI platform](https://www.databricks.com/product/platform). Perform exploratory analysis in Notebooks, log your experiments to MLflow, save and govern your data and models. Serve models via REST API. Schedule jobs. Monitor with dashboards.
 
-    Add the skills to Genie Code, or sync them to Unity Catalog.
 
-    [:octicons-arrow-right-24: Set up](setup.md)
+## What can I do with Vital Skills 
+See available skills [here](skills/).
 
--   :material-view-grid: **Skill catalog**
+For example, you can build patient cohorts with plain English descriptions like "patients with type 2 diabetes and uncontrolled blood sugar". AI will load the [cohort-builder](skills/cohort-builder/) skill, look into the data available (structured and/or unstructured) and present several options defining "uncontrolled blood sugar" so you can specify your cohort with great precision.
 
-    ---
+Another example is downloading and serving biological foundation models like scGPT on Databricks using the [open-weight-models](skills/open-weight-models/) skill.
 
-    Genomics, real-world evidence, PHI de-identification, payer and provider measures, and more.
+You can also perform RNA sequencing analysis using the [single-cell](skills/sc-rnaseq/) or [bulk](skills/bulk-rnaseq/) analysis skill and log the results to MLflow Experiments.
 
-    [:octicons-arrow-right-24: Browse skills](skills/index.md)
+![UMAP cell-type comparison logged to an MLflow experiment](assets/umap.png)
 
--   :material-scale-balance: **Evaluation**
+## Use Vital Skills with any AI agent
+Use with any AI agent ([Genie Code](https://docs.databricks.com/aws/en/genie-code/), [Genie One](https://www.databricks.com/product/genie/one), [Omnigent](https://omnigent.ai/), Claude Code, Codex) that support standard agent skills. 
 
-    ---
+[Genie Code](https://docs.databricks.com/aws/en/genie-code/) is available within the Databricks workspace and also as [CLI](https://docs.databricks.com/aws/en/genie-code/genie-code-cli). 
 
-    How each skill is benchmarked with and without the skill loaded.
+[Genie One](https://www.databricks.com/product/genie/one) is Databricks universal chat AI. It can also load skills and generate code. Genie One is to Genie Code like Claude Desktop is to Claude Code. 
 
-    [:octicons-arrow-right-24: See the method](evaluation.md)
+Often, both are powered by similar LLMs but [Genie Code](https://docs.databricks.com/aws/en/genie-code/) is optimized for coding while [Genie One](https://www.databricks.com/product/genie/one) is optimized for chatting.
 
--   :material-source-pull: **Contributing**
+## Freely available
+Get Vital Skills from [Github](https://github.com/databricks-industry-solutions/hls-skills). Don't have Databricks? Check out [Databricks Free Edition](https://www.databricks.com/learn/free-edition)!
 
-    ---
-
-    Report a bug, request a skill, or add your own.
-
-    [:octicons-arrow-right-24: Contribute](contributing.md)
-
-</div>
-
-## How a skill loads
-
-Skills use progressive disclosure, so an agent only reads what the task needs:
-
-1. **Metadata.** The agent reads each skill's `name` and `description` to decide whether it applies.
-2. **Instructions.** When a skill matches, the agent loads its full `SKILL.md`.
-3. **Resources.** Files in `references/`, `assets/`, and `scripts/` are opened only when the instructions call for them.
-
-## What a skill folder contains
-
-```text
-skills/<skill-name>/
-├── SKILL.md      # Required: frontmatter + instructions
-├── references/   # Optional: loaded on demand
-├── assets/       # Optional: templates and fixtures used as-is
-├── scripts/      # Optional: runnable helpers
-├── tests/        # Optional: unit tests (not published)
-└── eval/         # Optional: benchmark evidence (not published)
-```
