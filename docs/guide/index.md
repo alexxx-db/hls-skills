@@ -1,5 +1,5 @@
 ## About Vital Skills
-Vital Skills is a collection of agent skills for Health & Life Sciences workflows on Databricks. Built by HLS experts for HLS tasks, Vital Skills help you get the most out of Databricks using AI assistants.
+Vital Skills is a collection of agent skills for Health & Life Sciences (HLS) workflows on Databricks. Built by HLS experts for HLS tasks, Vital Skills help you get the most out of Databricks using AI assistants.
 
 Each skill is a folder with a `SKILL.md` file that follows the [Agent Skills](https://agentskills.io/specification) standard compatible with most coding agents. It guides AI how to run a domain workflow with the right libraries, tools, and MCP servers.
 
