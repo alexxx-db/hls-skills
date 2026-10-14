@@ -10,13 +10,12 @@ Layout inspired by [SciAgent-Skills](https://github.com/jaechang-hits/SciAgent-S
 ```
 ├── AGENTS.md
 ├── templates/
-│   ├── SKILL_TEMPLATE.md           ← Pipeline
+│   ├── SKILL_TEMPLATE_PIPELINE.md  ← Pipeline
 │   └── SKILL_TEMPLATE_GUIDE.md     ← Guide
-├── integration-templates/          ← AGENTS / Cursor / Windsurf consumer snippets
 └── skills/
-    ├── target-discovery/
-    ├── hit-to-lead/
-    └── compound-assessment/
+    ├── accelerators/
+    ├── bulk-rnaseq/
+    └── open-weight-models/
 ```
 
 Each skill lives at:
@@ -25,7 +24,7 @@ Each skill lives at:
 skills/{skill-name}/SKILL.md
 ```
 
-Optional siblings next to `SKILL.md`: `references/`, `assets/`, `scripts/`, `tests/` (unit tests; kept in git but excluded from the published bundle), and `eval/` (benchmark evidence from `skills/skill-eval`; kept in git but excluded from the published bundle).
+Optional siblings next to `SKILL.md`: `references/`, `assets/` .`scripts/`, `tests/` (unit tests; kept in git but excluded from the published bundle), and `eval/` (benchmark evidence from `skills/skill-eval`; kept in git but excluded from the published bundle).
 
 ---
 
@@ -48,7 +47,6 @@ Optional siblings next to `SKILL.md`: `references/`, `assets/`, `scripts/`, `tes
 
 1. Copy the matching template into `skills/{skill-name}/SKILL.md`
 2. Folder name must match frontmatter `name` (lowercase, hyphens, ≤64 chars)
-3. Prefer `{tool-or-domain}-{purpose}` naming (e.g. `druggable-targets`, `adme-assessment`)
 4. Keep `SKILL.md` concise; put long queries / API cheatsheets in `references/`
 
 ### Step 3. Description Rules
